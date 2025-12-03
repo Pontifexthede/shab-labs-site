@@ -1,13 +1,14 @@
 /* 1) SHAB LABS header */
 @font-face {
   font-family: 'Blanka';
-  src: url('fonts/Blanka-Regular.ttf') format('truetype');
+  /* If your file is .ttf instead of .otf, change the extension below */
+  src: url('fonts/Blanka-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-/* 2) Slogan: "Turn every interaction into value (GM, BTW.)" */
+/* 2) Slogan font */
 @font-face {
   font-family: 'SairaCondensed';
   src: url('fonts/SairaCondensed-Regular.ttf') format('truetype');
@@ -26,14 +27,14 @@
 }
 
 :root {
-  --bg: #050518;
-  --bg-alt: #0b0b23;
+  --bg: rgba(5, 5, 24, 0.88);
+  --bg-alt: rgba(11, 11, 35, 0.90);
   --text: #f5f5ff;
   --muted: #a0a0c2;
   --primary: #4b6fff;
   --primary-dark: #354ccc;
   --secondary: #252547;
-  --card-bg: #101028;
+  --card-bg: rgba(16, 16, 40, 0.9);
   --border-radius: 12px;
   --max-width: 1100px;
 }
@@ -45,7 +46,8 @@
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top left, #451b3d, #050518 40%, #06193e);
+  /* Your background image for the whole site */
+  background: url('img/background.jpg') center center / cover fixed no-repeat;
   color: var(--text);
   line-height: 1.6;
 }
@@ -60,18 +62,26 @@ body {
 .hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  background: var(--bg);
+  border-radius: 20px;
+  padding: 24px 18px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
 }
 
-.logo-img {
-  max-width: 260px;
-  height: auto;
+/* Logo image at top */
+.hero-logo {
+  display: block;
+  max-width: 220px;
+  width: 55%;
+  margin: 0 auto 10px;
 }
 
 /* SHAB LABS header (Blanka) */
 .logo-text {
   font-family: 'Blanka', system-ui, sans-serif;
-  letter-spacing: 0.16em;
-  font-size: 2.8rem;
+  letter-spacing: 0.18em;
+  font-size: 2.6rem;
   margin: 0 0 8px;
   text-transform: uppercase;
 }
@@ -80,9 +90,18 @@ body {
 .hero-slogan {
   font-family: 'SairaCondensed', system-ui, sans-serif;
   font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  margin: 4px 0 18px;
+  letter-spacing: 0.08em;
+  margin: 4px 0 12px;
   color: var(--muted);
+}
+
+/* Small explanatory line (Inter) */
+.hero-subtitle {
+  margin-top: 6px;
+  color: var(--muted);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-buttons {
@@ -93,7 +112,7 @@ body {
   gap: 12px;
 }
 
-/* Buttons */
+/* Buttons (glassy / see-through) */
 
 .btn {
   display: inline-block;
@@ -103,26 +122,29 @@ body {
   font-size: 0.95rem;
   border: 1px solid transparent;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  backdrop-filter: blur(10px);
 }
 
 .btn.primary {
-  background: var(--primary);
-  color: #fff;
+  background: rgba(75, 111, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(75, 111, 255, 0.9);
 }
 
 .btn.primary:hover {
-  background: var(--primary-dark);
+  background: rgba(75, 111, 255, 0.32);
   transform: translateY(-1px);
 }
 
 .btn.secondary {
-  background: transparent;
+  background: rgba(12, 12, 35, 0.35);
   color: var(--text);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .btn.secondary:hover {
-  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(12, 12, 35, 0.55);
+  border-color: rgba(255, 255, 255, 0.7);
   transform: translateY(-1px);
 }
 
@@ -131,7 +153,7 @@ body {
 .top-nav {
   position: sticky;
   top: 0;
-  background: rgba(5, 5, 24, 0.9);
+  background: rgba(5, 5, 24, 0.85);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
@@ -154,11 +176,22 @@ body {
 /* Sections */
 
 .section {
-  padding: 50px 16px;
+  padding: 40px 16px;
 }
 
 .section.alt {
-  background: var(--bg-alt);
+  /* Slightly different tint */
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--bg);
+  border-radius: 20px;
+  padding: 24px 18px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
 }
 
 .section h2 {
@@ -172,6 +205,11 @@ body {
   max-width: 620px;
   margin: 0 auto 24px;
   color: var(--muted);
+}
+
+/* Center helper */
+.centered {
+  text-align: center;
 }
 
 /* Services grid */
@@ -198,21 +236,6 @@ body {
 .service-card p {
   margin: 0;
   color: var(--muted);
-}
-
-/* Forms */
-
-.form-wrapper {
-  max-width: 760px;
-  margin: 0 auto;
-  background: var(--card-bg);
-  padding: 10px;
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.form-wrapper iframe {
-  border: none;
 }
 
 /* Bullets */
@@ -258,8 +281,8 @@ body {
 /* Responsive */
 
 @media (min-width: 768px) {
-  .hero-title {
-    font-size: 2.2rem;
+  .logo-text {
+    font-size: 3rem;
   }
 
   .services-grid {
@@ -270,5 +293,3 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
-
