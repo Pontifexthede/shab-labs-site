@@ -329,6 +329,27 @@ body {
   color: var(--muted);
 }
 
+/* Official X icon in footer */
+.footer-x-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-x-icon {
+  width: 22px;   /* adjust smaller/larger as you like */
+  height: 22px;
+  display: block;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.footer-x-link:hover .footer-x-icon {
+  transform: translateY(-2px) scale(1.06);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.45));
+}
+
 
 .menu-toggle {
   position: fixed;
@@ -428,6 +449,7 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 
 
 
