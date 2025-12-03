@@ -1,61 +1,82 @@
-<!-- Hamburger button -->
-<button class="menu-toggle" aria-label="Toggle navigation">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | SHAB LABS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-<!-- Slide‑out navigation -->
-<nav class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="request-support.html">Request Support</a>
-  <a href="join-team.html">Join the Team</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="request-support.html">Request Support</a>
+    <a href="join-team.html">Join the Team</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
+  <header class="hero small-hero">
+    <div class="hero-inner">
+      <img src="img/shablabs-logo.png" alt="SHAB LABS Logo" class="hero-logo" />
+      <h1 class="logo-text">SHAB LABS</h1>
+      <p class="hero-subtitle">Talk to Us Directly</p>
+    </div>
+  </header>
 
+  <main>
+    <section class="section alt">
+      <div class="section-inner">
+        <p class="section-intro">
+          Prefer to chat first? Reach out to either of us on Telegram or X.
+        </p>
 
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Your Name</h3>
+            <a class="btn primary" href="https://t.me/pontifexthede" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a class="btn secondary" href="https://x.com/pontifexthede" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          </div>
 
+          <div class="contact-card">
+            <h3>Co‑Founder Name</h3>
+            <a class="btn primary" href="https://t.me/idioMMXM" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a class="btn secondary" href="https://x.com/idioMMXM" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer class="footer">
+    <p>© <span id="year"></span> SHAB LABS. All rights reserved.</p>
+  </footer>
 
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.getElementById('mobileNav');
 
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-  // Update footer year (Home might not have #year, that's fine)
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-
-  // Mobile menu toggle
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileNav = document.getElementById('mobileNav');
-
-  if (menuToggle && mobileNav) {
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('open');
-      mobileNav.classList.toggle('open');
-    });
-
-    // Close menu when a link is clicked
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('open');
-        mobileNav.classList.remove('open');
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+        mobileNav.classList.toggle('open');
       });
-    });
-  }
-</script>
+
+      document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('open');
+          mobileNav.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
