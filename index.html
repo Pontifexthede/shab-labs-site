@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SHAB LABS | Web3 Growth Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <!-- Logo: image OR text -->
+      <div class="logo">
+        <!-- If you have a logo image -->
+        <img src="img/shablabs-logo.png" alt="SHAB LABS Logo" class="logo-img" />
+        <!-- If you don't have an image yet, you can temporarily use text:
+        <h1 class="logo-text">SHAB LABS</h1>
+        -->
+      </div>
+
+      <h1 class="hero-title">Web3 Growth Powered by Narrative, Community & Onboarding</h1>
+      <p class="hero-subtitle">
+        We help Web3 projects turn attention into educated, loyal users through content,
+        Spaces, funnels, and guided onboarding.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#request-support" class="btn primary">I’m a Project – Request Support</a>
+        <a href="#join-team" class="btn secondary">I Want to Join the Team & Earn</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="top-nav">
+    <a href="#services">Services</a>
+    <a href="#request-support">Request Support</a>
+    <a href="#join-team">Join the Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <h2>Services for Web3 Projects</h2>
+      <p class="section-intro">
+        Pick a single service or mix a few. We’ll help you design a growth path that fits your stage and goals.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Micro KOL Campaigns</h3>
+          <p>We connect you with niche creators on X, Telegram, Discord, and TikTok and handle outreach and coordination.</p>
+        </div>
+        <div class="service-card">
+          <h3>Narrative & Content</h3>
+          <p>We turn your vision and tech into clear X threads, posts, and launch copy your audience actually understands.</p>
+        </div>
+        <div class="service-card">
+          <h3>Spaces Hosting</h3>
+          <p>We host structured, value-first Spaces with your team to educate listeners and convert them into active users.</p>
+        </div>
+        <div class="service-card">
+          <h3>Discord / Telegram Funnels</h3>
+          <p>We design welcome flows, tasks, and FAQs that turn new joins into engaged, informed members.</p>
+        </div>
+        <div class="service-card">
+          <h3>User Education Packs</h3>
+          <p>Short guides, explainers, and micro-courses that show users how to get started and stay engaged.</p>
+        </div>
+        <div class="service-card">
+          <h3>Referral & Onboarding</h3>
+          <p>High-intent user groups with guided onboarding calls and support instead of random raid traffic.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Request Support Section -->
+    <section id="request-support" class="section alt">
+      <h2>Request Support for Your Project</h2>
+      <p class="section-intro">
+        Tell us a bit about what you’re building and where you need help. We’ll review and get back to you with a simple, tailored plan.
+      </p>
+
+      <!-- Replace this iframe src with your actual Google Form embed URL -->
+      <div class="form-wrapper">
+        <iframe
+          src="https://tally.so/embed/44a0o5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          width="100%"
+          height="600"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >
+          Loading…
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Join the Team Section -->
+    <section id="join-team" class="section">
+      <h2>Join the Team & Earn</h2>
+      <p class="section-intro">
+        Help Web3 projects grow through content, Spaces, KOL outreach, and onboarding — and get rewarded for real contributions.
+      </p>
+      <ul class="bullets">
+        <li>Write or edit X threads, posts, and guides.</li>
+        <li>Co-host or moderate community Spaces.</li>
+        <li>Reach out to micro KOLs and communities.</li>
+        <li>Structure Discord / Telegram flows and onboarding.</li>
+      </ul>
+      <p class="section-intro">
+        We’re quick on our feet and always ready to learn something new. If you’re the same, apply below.
+      </p>
+
+      <!-- Replace this iframe src with your actual Google Form embed URL -->
+      <div class="form-wrapper">
+        <iframe
+          src="https://tally.so/embed/VLp7bM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          width="100%"
+          height="650"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >
+          Loading…
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section alt">
+      <h2>Talk to Us Directly</h2>
+      <p class="section-intro">
+        Prefer to chat first? Reach out to either of us on Telegram or X.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Your Name</h3>
+          <a class="btn primary" href="https://t.me/pontifexthede" target="_blank">Telegram</a>
+          <a class="btn secondary" href="https://x.com/pontifexthede" target="_blank">X (Twitter)</a>
+        </div>
+
+        <div class="contact-card">
+          <h3>Co‑Founder Name</h3>
+          <a class="btn primary" href="https://t.me/idioMMXM" target="_blank">Telegram</a>
+          <a class="btn secondary" href="https://x.com/idioMMXM" target="_blank">X (Twitter)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> SHAB LABS. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Automatically update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
