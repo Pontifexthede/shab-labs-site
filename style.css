@@ -66,9 +66,10 @@ body {
   padding: 24px 18px 30px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
-opacity: 0;
+
+  opacity: 0;
   transform: translateY(18px);
-  animation: heroFadeIn 0.7s ease-out 0.1s forwards;
+  animation: heroFadeIn 1.4s ease-out 0.2s forwards;
 }
 
 @keyframes heroFadeIn {
@@ -125,6 +126,34 @@ opacity: 0;
 .small-hero {
   padding-top: 30px;
   padding-bottom: 20px;
+}
+
+/* Compress logo + text when inside a small-hero */
+.small-hero .hero-inner {
+  max-width: 720px;
+  padding: 18px 16px 22px;
+}
+
+.small-hero .hero-logo {
+  max-width: 150px;
+  width: 40%;
+  margin-bottom: 6px;
+}
+
+.small-hero .logo-text {
+  font-size: 2rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 4px;
+}
+
+.small-hero .hero-slogan {
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  margin: 2px 0 8px;
+}
+
+.small-hero .hero-subtitle {
+  font-size: 0.9rem;
 }
 
 /* Buttons (glassy / see-through) */
@@ -346,10 +375,9 @@ opacity: 0;
 .reveal {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 1.3s ease-out, transform 1.3s ease-out;
 }
 
-/* When visible */
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
@@ -368,6 +396,7 @@ opacity: 0;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 
 
 
