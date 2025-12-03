@@ -63,26 +63,60 @@
     <p>© <span id="year"></span> SHAB LABS. All rights reserved.</p>
   </footer>
 
-  <script>
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+<script>
+  // Update footer year (if present)
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileNav = document.getElementById('mobileNav');
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileNav = document.getElementById('mobileNav');
 
-    if (menuToggle && mobileNav) {
-      menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('open');
-        mobileNav.classList.toggle('open');
+  if (menuToggle && mobileNav) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('open');
+        mobileNav.classList.remove('open');
       });
+    });
+  }
 
-      document.querySelectorAll('.mobile-nav a').forEach(link => {
-        link.addEventListener('click', () => {
-          menuToggle.classList.remove('open');
-          mobileNav.classList.remove('open');
+  // -------- Scroll reveal animations --------
+
+  // Elements we want to animate in on scroll
+  const revealEls = document.querySelectorAll(
+    '.section-inner, .service-card, .contact-card, .bullets li'
+  );
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            revealObserver.unobserve(entry.target);
+          }
         });
-      });
-    }
-  </script>
+      },
+      { threshold: 0.15 } // 15% visible
+    );
+
+    revealEls.forEach(el => {
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    });
+  } else {
+    // Fallback for very old browsers: just show everything
+    revealEls.forEach(el => el.classList.add('reveal-visible'));
+  }
+</script>
 </body>
 </html>
