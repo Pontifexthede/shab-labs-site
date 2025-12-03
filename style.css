@@ -288,6 +288,38 @@ body {
   margin-top: 0;
 }
 
+.contact-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: transparent;           /* borderless, transparent */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+/* Slight “float” on hover */
+.social-link:hover .social-icon {
+  transform: translateY(-2px) scale(1.05);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.45));
+}
 /* Footer */
 
 .footer {
@@ -396,6 +428,7 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 
 
 
