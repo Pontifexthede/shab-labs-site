@@ -102,9 +102,9 @@
     });
   }
 
-  // -------- Scroll reveal animations --------
+  // -------- Scroll reveal animations (continuous) --------
 
-  // Elements we want to animate in on scroll
+  // Elements to animate on scroll
   const revealEls = document.querySelectorAll(
     '.section-inner, .service-card, .contact-card, .bullets li'
   );
@@ -114,12 +114,15 @@
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            // Element is in view: fade/slide in
             entry.target.classList.add('reveal-visible');
-            revealObserver.unobserve(entry.target);
+          } else {
+            // Element left view: reset to hidden state
+            entry.target.classList.remove('reveal-visible');
           }
         });
       },
-      { threshold: 0.15 } // 15% visible
+      { threshold: 0.15 }
     );
 
     revealEls.forEach(el => {
@@ -127,7 +130,7 @@
       revealObserver.observe(el);
     });
   } else {
-    // Fallback for very old browsers: just show everything
+    // Fallback: show everything if IntersectionObserver not supported
     revealEls.forEach(el => el.classList.add('reveal-visible'));
   }
 </script>
