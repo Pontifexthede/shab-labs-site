@@ -111,6 +111,12 @@ body {
   gap: 12px;
 }
 
+/* Smaller hero on subpages */
+.small-hero {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
 /* Buttons (glassy / see-through) */
 
 .btn {
@@ -339,5 +345,6 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 
 
