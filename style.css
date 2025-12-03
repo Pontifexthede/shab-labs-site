@@ -1,7 +1,6 @@
 /* 1) SHAB LABS header */
 @font-face {
   font-family: 'Blanka';
-  /* If your file is .ttf instead of .otf, change the extension below */
   src: url('fonts/Blanka-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -20,7 +19,7 @@
 /* 3) Default body font: Inter Medium */
 @font-face {
   font-family: 'Inter';
-  src: url('fonts/Inter-Medium.otf') format('opentype');
+  src: url('fonts/inter-Medium.otf') format('opentype');  /* notice lowercase i */
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -293,3 +292,4 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
