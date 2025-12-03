@@ -66,6 +66,16 @@ body {
   padding: 24px 18px 30px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
+opacity: 0;
+  transform: translateY(18px);
+  animation: heroFadeIn 0.7s ease-out 0.1s forwards;
+}
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Logo image at top */
@@ -332,6 +342,19 @@ body {
 
 /* Responsive */
 
+/* Scroll reveal base state */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When visible */
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (min-width: 768px) {
   .logo-text {
     font-size: 3rem;
@@ -345,6 +368,7 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 
 
 
