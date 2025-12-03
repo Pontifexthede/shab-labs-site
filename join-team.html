@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Join the Team | SHAB LABS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="request-support.html">Request Support</a>
+    <a href="join-team.html">Join the Team</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="hero small-hero">
+    <div class="hero-inner">
+      <img src="img/shablabs-logo.png" alt="SHAB LABS Logo" class="hero-logo" />
+      <h1 class="logo-text">SHAB LABS</h1>
+      <p class="hero-subtitle">Join the Team & Earn</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-intro">
+          Help Web3 projects grow through content, Spaces, KOL outreach, and onboarding — and get rewarded for real contributions.
+        </p>
+        <ul class="bullets">
+          <li>Write or edit X threads, posts, and guides.</li>
+          <li>Co-host or moderate community Spaces.</li>
+          <li>Reach out to micro KOLs and communities.</li>
+          <li>Structure Discord / Telegram flows and onboarding.</li>
+        </ul>
+        <p class="section-intro">
+          We’re quick on our feet and always ready to learn something new. If you’re the same, apply below.
+        </p>
+
+        <div class="centered">
+          <a
+            href="https://tally.so/r/VLp7bM"
+            class="btn secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apply to Join the Team
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> SHAB LABS. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.getElementById('mobileNav');
+
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+        mobileNav.classList.toggle('open');
+      });
+
+      document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('open');
+          mobileNav.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
