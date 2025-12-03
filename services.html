@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services | SHAB LABS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="request-support.html">Request Support</a>
+    <a href="join-team.html">Join the Team</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="hero small-hero">
+    <div class="hero-inner">
+      <img src="img/shablabs-logo.png" alt="SHAB LABS Logo" class="hero-logo" />
+      <h1 class="logo-text">SHAB LABS</h1>
+      <p class="hero-subtitle">Services for Web3 Projects</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-intro">
+          Pick a single service or mix a few. We’ll help you design a growth path that fits your stage and goals.
+        </p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Micro KOL Campaigns</h3>
+            <p>We connect you with niche creators on X, Telegram, Discord, and TikTok and handle outreach and coordination.</p>
+          </div>
+          <div class="service-card">
+            <h3>Narrative & Content</h3>
+            <p>We turn your vision and tech into clear X threads, posts, and launch copy your audience actually understands.</p>
+          </div>
+          <div class="service-card">
+            <h3>Spaces Hosting</h3>
+            <p>We host structured, value-first Spaces with your team to educate listeners and convert them into active users.</p>
+          </div>
+          <div class="service-card">
+            <h3>Discord / Telegram Funnels</h3>
+            <p>We design welcome flows, tasks, and FAQs that turn new joins into engaged, informed members.</p>
+          </div>
+          <div class="service-card">
+            <h3>User Education Packs</h3>
+            <p>Short guides, explainers, and micro-courses that show users how to get started and stay engaged.</p>
+          </div>
+          <div class="service-card">
+            <h3>Referral & Onboarding</h3>
+            <p>High-intent user groups with guided onboarding calls and support instead of random raid traffic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> SHAB LABS. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.getElementById('mobileNav');
+
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+        mobileNav.classList.toggle('open');
+      });
+
+      document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('open');
+          mobileNav.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
