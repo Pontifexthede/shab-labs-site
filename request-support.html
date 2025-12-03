@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Request Support | SHAB LABS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="request-support.html">Request Support</a>
+    <a href="join-team.html">Join the Team</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header class="hero small-hero">
+    <div class="hero-inner">
+      <img src="img/shablabs-logo.png" alt="SHAB LABS Logo" class="hero-logo" />
+      <h1 class="logo-text">SHAB LABS</h1>
+      <p class="hero-subtitle">Request Support</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section alt">
+      <div class="section-inner">
+        <p class="section-intro">
+          Tell us a bit about what you’re building and where you need help. We’ll review and get back to you with a simple, tailored plan.
+        </p>
+
+        <div class="centered">
+          <a
+            href="https://tally.so/r/44a0o5"
+            class="btn primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open Request Form
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> SHAB LABS. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.getElementById('mobileNav');
+
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+        mobileNav.classList.toggle('open');
+      });
+
+      document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('open');
+          mobileNav.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
